@@ -271,6 +271,26 @@ function initOtherEventListeners() {
         scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
+    // Auto Pause Music when page is hidden (tabs switched, screen locked, app minimized)
+    document.addEventListener('visibilitychange', () => {
+        const bgMusic = document.getElementById('bgMusic');
+        if (bgMusic) {
+            if (document.hidden) {
+                bgMusic.pause();
+            } else {
+                if (isPlaying) {
+                    bgMusic.play().catch(e => console.warn('Music play on focus blocked:', e));
+                }
+            }
+        }
+    });
+
+    // Pause Music when tab/page is closed
+    window.addEventListener('pagehide', () => {
+        const bgMusic = document.getElementById('bgMusic');
+        if (bgMusic) bgMusic.pause();
+    });
+
     // Form Submissions
     const wishForm = document.getElementById('wishForm');
     if (wishForm) {
