@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Shania & Fauzan</title>
+    
+    <!-- Performance Preloads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- SVG Gold Gradient Definition -->
+        <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F3E7C4" />
+                    <stop offset="30%" stop-color="#D4AF37" />
+                    <stop offset="50%" stop-color="#F3E7C4" />
+                    <stop offset="70%" stop-color="#AA7C11" />
+                    <stop offset="100%" stop-color="#D4AF37" />
+                </linearGradient>
+            </defs>
+        </svg>
+        <!-- Musik -->
+        <audio id="bgMusic" loop preload="auto">
+            <source src="assets/audio/Engagement_Party.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicToggle" class="music-toggle">
+            <span id="musicIcon">♪</span>
+        </button>
+
+        <!-- Scroll to Top -->
+        <button id="scrollTop" class="scroll-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+
+        <!-- 1. COVER -->
+        <section id="cover">
+
+            <div class="cover-bg" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800');"></div>
+            <div class="cover-overlay"></div>
+            <div class="cover-content">
+                <h3 class="cover-label">THE WEDDING OF</h3>
+                <h1 class="cover-names">Shania & Fauzan</h1>
+                <p class="cover-dear">Dear,</p>
+                <p class="cover-guest" id="guestName">Tamu Undangan</p>
+                <button id="btnOpen" class="btn-open-invitation">
+                    OPEN INVITATION
+                </button>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main id="main-content" style="display: none;">
+            
+            <!-- 2. HERO + COUNTDOWN -->
+            <section id="hero">
+
+                <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h3 class="hero-wedding-of fade-up">THE WEDDING OF</h3>
+                    <h1 class="hero-names fade-up">Shania & Fauzan</h1>
+                    <p class="hero-date fade-up">Sabtu, 18 Juli 2026</p>                    
+                    <div class="countdown-wrapper fade-up">
+                        <div class="countdown-box">
+                            <span id="days" class="countdown-number">00</span>
+                            <span class="countdown-label">Hari</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="hours" class="countdown-number">00</span>
+                            <span class="countdown-label">Jam</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="minutes" class="countdown-number">00</span>
+                            <span class="countdown-label">Menit</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="seconds" class="countdown-number">00</span>
+                            <span class="countdown-label">Detik</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" id="btnCalendar" class="btn-kalender fade-up">
+                        SIMPAN DI KALENDER
+                    </a>
+                </div>
+            </section>
+
+            <!-- 3. QUOTE ISLAMI -->
+            <section id="quote">
+                <!-- Motif Emas Sudut -->
+                <img class="corner-floral" style="top: 0; left: 0; transform: rotate(270deg);" src="assets/—Pngtree—gold floral corner_21433936.PNG" alt="Gold Corner">
+                <img class="corner-floral" style="bottom: 0; right: 0; transform: rotate(90deg);" src="assets/—Pngtree—gold floral corner_21433936.PNG" alt="Gold Corner">
+                <div class="monogram-wrapper fade-up">
+                    <svg viewBox="0 0 100 100" class="monogram-svg">
+                        <ellipse cx="50" cy="50" rx="36" ry="42" stroke="url(#goldGradient)" stroke-width="1.2" fill="none" />
+                        <ellipse cx="50" cy="50" rx="40" ry="46" stroke="url(#goldGradient)" stroke-width="1" fill="none" stroke-dasharray="1, 3" />
+                        <g stroke="url(#goldGradient)" stroke-width="1.0" fill="none">
+                            <path d="M 45,4 C 47,8 53,8 55,4 M 42,6 C 45,10 48,10 50,6 C 52,10 55,10 58,6" />
+                            <circle cx="50" cy="2" r="1.5" fill="url(#goldGradient)" />
+                            <path d="M 45,96 C 47,92 53,92 55,96 M 42,94 C 45,90 48,90 50,94 C 52,90 55,90 58,94" />
+                            <circle cx="50" cy="98" r="1.5" fill="url(#goldGradient)" />
+                            <path d="M 4,45 C 8,47 8,53 4,55" />
+                            <circle cx="2" cy="50" r="1.5" fill="url(#goldGradient)" />
+                            <path d="M 96,45 C 92,47 92,53 96,55" />
+                            <circle cx="98" cy="50" r="1.5" fill="url(#goldGradient)" />
+                            <path d="M 20,20 C 18,22 18,25 20,27 M 17,18 C 14,21 16,25 20,23" />
+                            <path d="M 80,20 C 82,22 82,25 80,27 M 83,18 C 86,21 84,25 80,23" />
+                            <path d="M 20,80 C 18,78 18,75 20,73 M 17,82 C 14,79 16,75 20,77" />
+                            <path d="M 80,80 C 82,78 82,75 80,73 M 83,82 C 86,79 84,75 80,77" />
+                        </g>
+                    </svg>
+                    <div class="monogram-letter">SF</div>
+                </div>
+                <p class="quote-text fade-up" id="weddingQuote"></p>
+                <p class="quote-source fade-up" id="weddingQuoteSource"></p>
+            </section>
+
+            <!-- 4. PROFIL MEMPELAI -->
+            <section id="profil">
+
+                <div class="fade-up">
+                    <div class="profil-foto bride-photo"></div>
+                    <h2 class="profil-nama" id="brideName"></h2>
+                    <p class="profil-urutan" id="brideDesc"></p>
+                    <p class="profil-ortu" id="brideParents"></p>
+                </div>
+                
+                <div class="profil-divider fade-up"></div>
+                
+                <div class="fade-up">
+                    <div class="profil-foto groom-photo"></div>
+                    <h2 class="profil-nama" id="groomName"></h2>
+                    <p class="profil-urutan" id="groomDesc"></p>
+                    <p class="profil-ortu" id="groomParents"></p>
+                </div>
+
+                <!-- Motif Bouquet Kustom di Pojok Kanan Bawah (Opsi B) -->
+                <img class="profil-bouquet-decor" src="assets/—Pngtree—gold floral bouquet clipart elegant_20308029.png" alt="Gold Bouquet">
+            </section>
+
+            <!-- 5. LOVE STORY -->
+            <section id="love-story">
+                <h2 class="love-story-title fade-up">Love Story</h2>
+                <div class="love-story-photos fade-up">
+                    <div class="love-photo-1"></div>
+                    <div class="love-photo-2"></div>
+                </div>
+                <p class="love-story-text fade-up" id="storyContent"></p>
+            </section>
+
+            <!-- 6. AKAD NIKAH -->
+            <section id="akad">
+                <h2 class="acara-title fade-up">Akad Nikah</h2>
+                <div class="acara-card fade-up" style="position: relative; overflow: hidden;">
+                    <!-- Motif Emas Acara (Jasmine) -->
+                    <svg class="card-floral-top" viewBox="0 0 200 40"><g stroke="url(#goldGradient)" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M 0,10 Q 50,25 100,10 Q 150,25 200,10" /><path d="M 40,15 C 35,5 45,5 40,15 C 48,10 48,20 40,15 C 45,25 35,25 40,15 C 32,20 32,10 40,15 Z" fill="url(#goldGradient)" fill-opacity="0.12" /><circle cx="40" cy="15" r="1.5" fill="url(#goldGradient)" /><path d="M 160,15 C 155,5 165,5 160,15 C 168,10 168,20 160,15 C 165,25 155,25 160,15 C 152,20 152,10 160,15 Z" fill="url(#goldGradient)" fill-opacity="0.12" /><circle cx="160" cy="15" r="1.5" fill="url(#goldGradient)" /><circle cx="100" cy="12" r="1" fill="url(#goldGradient)" /></g></svg>
+                    <p class="acara-tanggal" id="akadDate"></p>
+                    <p class="acara-jam" id="akadTime"></p>
+                    <p class="acara-venue" id="akadPlace"></p>
+                    <p class="acara-alamat" id="akadAddress"></p>
+                    <a href="#" id="btnAkadMaps" class="btn-maps">GOOGLE MAPS</a>
+                    <svg class="card-floral-bottom" viewBox="0 0 200 40"><g stroke="url(#goldGradient)" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M 10,35 Q 100,20 190,35" /><path d="M 70,30 C 65,22 75,22 70,30 C 78,25 78,35 70,30 C 75,38 65,38 70,30 C 62,35 62,25 70,30 Z" fill="url(#goldGradient)" fill-opacity="0.12" /><circle cx="70" cy="30" r="1.5" fill="url(#goldGradient)" /><path d="M 130,30 C 125,22 135,22 130,30 C 138,25 138,35 130,30 C 135,38 125,38 130,30 C 122,35 122,25 130,30 Z" fill="url(#goldGradient)" fill-opacity="0.12" /><circle cx="130" cy="30" r="1.5" fill="url(#goldGradient)" /></g></svg>
+                </div>
+                <img class="section-divider-motif fade-up" src="assets/vecteezy_elegant-hand-drawn-floral-bouquet-with-gold-flowers-and-leaves_24952005.png" alt="Decorative Gold Floral Motif">
+            </section>
+
+            <!-- 7. RESEPSI -->
+            <section id="resepsi">
+                <h2 class="acara-title fade-up">Resepsi</h2>
+                <div class="acara-card fade-up" style="position: relative; overflow: hidden;">
+                    <!-- Motif Emas Acara (Magnolia) -->
+                    <svg class="card-floral-top" viewBox="0 0 200 40"><g stroke="url(#goldGradient)" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M 0,10 Q 50,25 100,10 Q 150,25 200,10" /><path d="M 100,20 C 90,8 85,20 92,23 C 85,26 90,35 100,29 C 110,35 115,26 108,23 C 115,20 110,8 100,20 Z" fill="url(#goldGradient)" fill-opacity="0.18" /><circle cx="100" cy="23" r="2" fill="url(#goldGradient)" /><path d="M 50,18 C 42,10 35,16 40,21 Z" fill="url(#goldGradient)" /><path d="M 150,18 C 158,10 165,16 160,21 Z" fill="url(#goldGradient)" /></g></svg>
+                    <p class="acara-tanggal" id="resepsiDate"></p>
+                    <p class="acara-jam" id="resepsiTime"></p>
+                    <p class="acara-venue" id="resepsiPlace"></p>
+                    <p class="acara-alamat" id="resepsiAddress"></p>
+                    <a href="#" id="btnResepsiMaps" class="btn-maps">GOOGLE MAPS</a>
+                    <svg class="card-floral-bottom" viewBox="0 0 200 40"><g stroke="url(#goldGradient)" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M 10,35 Q 100,20 190,35" /><path d="M 100,32 C 90,20 85,32 92,35 C 85,38 90,48 100,42 C 110,48 115,38 108,35 C 115,32 110,20 100,32 Z" fill="url(#goldGradient)" fill-opacity="0.18" /><circle cx="100" cy="35" r="2.5" fill="url(#goldGradient)" /><path d="M 50,30 C 42,22 35,28 40,33 Z" fill="url(#goldGradient)" /><path d="M 150,30 C 158,22 165,28 160,33 Z" fill="url(#goldGradient)" /><circle cx="70" cy="20" r="1.2" fill="url(#goldGradient)" /><circle cx="130" cy="20" r="1.2" fill="url(#goldGradient)" /></g></svg>
+                </div>
+                <img class="section-divider-motif fade-up" src="assets/vecteezy_elegant-hand-drawn-floral-bouquet-with-gold-flowers-and-leaves_24952005.png" alt="Decorative Gold Floral Motif">
+            </section>
+
+            <!-- 8. OUR GALLERY -->
+            <section id="gallery">
+
+                <h2 class="gallery-title fade-up">Our Gallery</h2>
+                <div class="gallery-main fade-up" onclick="openLightbox(0)"></div>
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-up" onclick="openLightbox(1)"></div>
+                    <div class="gallery-item fade-up" onclick="openLightbox(2)"></div>
+                    <div class="gallery-item fade-up" onclick="openLightbox(3)"></div>
+                    <div class="gallery-item fade-up" onclick="openLightbox(4)"></div>
+                </div>
+            </section>
+
+            <!-- 9. WEDDING GIFT -->
+            <section id="wedding-gift">
+                <!-- Motif Emas Sudut -->
+                <img class="corner-floral corner-gift-bottom-left" src="assets/pngtree-hand-drawn-flowers-and-leaves-golden-floral-corner-with-line-art-vector-png-image_7081313.png" alt="Gold Corner">
+                <img class="corner-floral corner-gift-top-right" src="assets/pngtree-hand-drawn-flowers-and-leaves-golden-floral-corner-with-line-art-vector-png-image_7081313.png" alt="Gold Corner">
+
+                <h2 class="gift-title fade-up">Wedding Gift</h2>
+                <p class="gift-desc fade-up">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat memberikannya melalui:</p>
+                <button id="btnShowGift" class="btn-gift fade-up">KLIK DISINI</button>
+            </section>
+
+
+            <!-- 11. WEDDING WISH -->
+            <section id="wedding-wish">
+                <h2 class="wish-title fade-up">Wedding Wish</h2>
+                <p class="wish-message fade-up" style="margin-bottom: 24px; color: #DBAD85;">Tuliskan doa dan ucapan terbaik untuk kami</p>
+                <form id="wishForm" class="wish-form fade-up">
+                    <input type="text" id="wishName" placeholder="Nama Anda" required>
+                    <textarea id="wishMessage" placeholder="Ucapan & Doa" required rows="4"></textarea>
+                    <button type="submit" class="btn-send-wish">KIRIM UCAPAN</button>
+                </form>
+
+                <div class="wish-carousel-section fade-up">
+                    <div class="wish-carousel-container">
+                        <!-- Tombol prev -->
+                        <button class="wish-nav-btn" id="wishPrev">&#8592;</button>
+                        
+                        <!-- Viewport — hanya tampilkan 1 kartu -->
+                        <div class="wish-viewport" id="wishViewport">
+                            <div class="wish-track" id="wishTrack">
+                                <!-- Kartu diisi JS -->
+                            </div>
+                        </div>
+                        
+                        <!-- Tombol next -->
+                        <button class="wish-nav-btn" id="wishNext">&#8594;</button>
+                    </div>
+
+                    <!-- Dots -->
+                    <div class="wish-dots-row" id="wishDots"></div>
+                </div>
+            </section>
+
+            <!-- 12. TERIMA KASIH -->
+            <section id="closing">
+
+                <div class="closing-bg"></div>
+                <div class="closing-overlay"></div>
+                <div class="closing-content">
+                    <h2 class="closing-title fade-up">Terima Kasih</h2>
+                    <p class="closing-text fade-up">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.</p>
+                    <h1 class="closing-names fade-up">Shania & Fauzan</h1>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Modal Gift -->
+    <div id="giftModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 class="modal-title">Wedding Gift</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="rekening-card">
+                <div class="rekening-bank">Bank BCA</div>
+                <div class="rekening-label">Nomor Rekening</div>
+                <div class="rekening-number">7305088951</div>
+                <div class="rekening-label">Atas Nama</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #2E3551; margin-bottom: 12px;">Shania P. Soebroto</div>
+                <button onclick="copyToClipboard('7305088951')" class="salin-btn">
+                    <i class="far fa-copy"></i> Salin Nomor
+                </button>
+            </div>
+
+            <div class="alamat-card">
+                <div style="font-size: 20px;">🎁</div>
+                <div class="alamat-text">
+                    <strong>Fauzan & Shania</strong><br>
+                    Jl. Tambak II Blok B No.12, 004/005 Pegangsaan, Menteng, Jakarta Pusat 10320
+                </div>
+            </div>
+
+            <a href="https://wa.me/6281381463768" target="_blank" class="konfirmasi-btn" style="text-align: center; text-decoration: none; display: block;">
+                KONFIRMASI VIA WA
+            </a>
+        </div>
+    </div>
+
+    <!-- Lightbox Gallery -->
+    <div id="lightbox" class="modal-overlay" onclick="closeLightbox()" style="z-index: 6000;">
+        <div class="modal-box" style="background: transparent; padding: 0; box-shadow: none; display: flex; align-items: center; justify-content: center; max-width: 100%; max-height: 100%; position: relative;">
+            <span style="position: absolute; top: -40px; right: 0; color: white; font-size: 40px; cursor: pointer;">&times;</span>
+            <div id="lightboxImg" style="width: 100vw; max-width: 480px; height: 70vh; background: linear-gradient(135deg, #2E3551, #DBAD85); border-radius: 12px;"></div>
+        </div>
+    </div>
+
+    <!-- 1. GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- 2. Config & Firebase Logic -->
+    <script src="config.js"></script>
+    <script type="module" src="firebase.js"></script>
+    
+    <!-- 3. App Logic -->
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>

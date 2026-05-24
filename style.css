@@ -1,0 +1,1251 @@
+/* 
+ * CSS Digital Wedding Invitation - TOTAL OVERHAUL
+ * Premium Cinematic Design
+ */
+
+:root {
+    --navy: #2E3551;
+    --gold: #DBAD85;
+    --amour: #F5EBF6;
+    --champagne: #E8D9B0;
+    --deep-navy: #1A2040;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f0f0f0;
+    color: var(--navy);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: var(--white);
+    position: relative;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    overflow: hidden; /* Menghilangkan elemen yang bocor ke luar */
+}
+
+/* Specific fix for floating elements */
+#cover, main {
+    width: 100%;
+    max-width: 480px;
+}
+
+/* --- SECTION 1: COVER --- */
+#cover {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.cover-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    z-index: 0;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 18, 40, 0.52);
+    z-index: 1;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.cover-label {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    letter-spacing: 4px !important;
+    color: var(--gold) !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+}
+
+.cover-names {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 42px !important;
+    font-weight: 300 !important;
+    color: var(--white) !important;
+    margin-bottom: 24px !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+}
+
+.cover-dear {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 16px !important;
+    font-style: italic !important;
+    color: var(--champagne) !important;
+    margin-bottom: 8px !important;
+}
+
+.cover-guest {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 28px !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    color: var(--gold) !important;
+    margin-bottom: 40px !important;
+    text-transform: none !important;
+}
+
+.btn-open-invitation {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 14px 36px !important;
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    box-shadow: 0 4px 20px rgba(219,173,133,0.3) !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+}
+
+.btn-open-invitation:hover {
+    background: #c9976a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 24px rgba(219,173,133,0.4) !important;
+}
+
+.btn-open-invitation::before {
+    content: "✉";
+    font-size: 14px;
+}
+
+/* --- SECTION 2: HERO + COUNTDOWN --- */
+#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    background: var(--deep-navy);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 35%,
+        rgba(20,25,50,0.6) 60%,
+        rgba(20,25,50,0.95) 85%,
+        rgba(14,18,40,1) 100%
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 32px 24px 40px;
+}
+
+.hero-wedding-of {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.hero-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.hero-date {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--champagne);
+    margin-bottom: 24px;
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.countdown-box {
+    background: rgba(219,173,133,0.2);
+    border: 1px solid rgba(219,173,133,0.4);
+    border-radius: 8px;
+    padding: 12px 16px;
+    min-width: 64px;
+    text-align: center;
+}
+
+.countdown-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    display: block;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.btn-kalender {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 10px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-kalender:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+/* --- SECTION 3: QUOTE ISLAMI --- */
+#quote {
+    background: var(--navy);
+    padding: 80px 32px;
+    text-align: center;
+}
+
+.monogram-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.monogram-wrapper svg {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+}
+
+.monogram-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold);
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+}
+
+.quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--white);
+    line-height: 2;
+    max-width: 320px;
+    margin: 0 auto 16px;
+    position: relative;
+    z-index: 3;
+}
+
+.quote-source {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 3;
+}
+
+/* Specific sizing and z-index for Quote corner motifs to prevent overlap and ensure readability */
+#quote .corner-floral {
+    width: 130px;
+    height: 130px;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    #quote .corner-floral {
+        width: 95px;
+        height: 95px;
+        opacity: 0.3;
+    }
+}
+
+/* --- SECTION 4: PROFIL MEMPELAI --- */
+#profil {
+    background: var(--amour);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.profil-bouquet-decor {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.55;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .profil-bouquet-decor {
+        max-width: 180px;
+        bottom: -10px;
+        right: -10px;
+        opacity: 0.45;
+    }
+}
+
+.profil-foto {
+    width: 200px;
+    height: 260px;
+    border-radius: 100px 100px 0 0;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    background: linear-gradient(135deg, var(--navy), var(--gold));
+    box-shadow: 0 10px 25px rgba(46,53,81,0.15);
+}
+
+.bride-photo {
+    background: url('https://images.unsplash.com/photo-1549417229-7686ac5595fd?auto=format&fit=crop&q=80&w=600') no-repeat center;
+    background-size: cover;
+}
+
+.groom-photo {
+    background: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600') no-repeat center;
+    background-size: cover;
+}
+
+.profil-nama {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.profil-urutan {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.profil-ortu {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+}
+
+.profil-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 40px auto;
+}
+
+/* --- SECTION 5: LOVE STORY --- */
+#love-story {
+    background: var(--navy);
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.love-story-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 52px;
+    color: var(--gold);
+    margin-bottom: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.love-story-photos {
+    position: relative;
+    height: 320px;
+    margin: 0 auto 32px;
+    max-width: 320px;
+}
+
+.love-photo-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55%;
+    height: 220px;
+    object-fit: cover;
+    border: 3px solid rgba(219,173,133,0.3);
+    background: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600') no-repeat center;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.love-photo-2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    height: 220px;
+    object-fit: cover;
+    border: 3px solid rgba(219,173,133,0.3);
+    background: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600') no-repeat center;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.love-story-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 2;
+    text-align: center;
+}
+
+/* --- SECTION 6: AKAD & RESEPSI --- */
+#akad, #resepsi {
+    background: var(--amour);
+    padding: 80px 24px 0;
+    text-align: center;
+}
+
+.acara-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 52px;
+    color: var(--navy);
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.acara-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px 24px;
+    border: 1px solid rgba(46,53,81,0.1);
+    box-shadow: 0 10px 30px rgba(46,53,81,0.08);
+}
+
+.acara-tanggal {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.acara-jam {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+
+.acara-venue {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.acara-alamat {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #666666;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.btn-maps {
+    background: var(--navy);
+    color: var(--gold);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.section-divider-motif {
+    display: block;
+    margin: 40px auto 12px;
+    max-width: 180px;
+    height: auto;
+    opacity: 0.85;
+    transition: all 0.4s ease;
+}
+
+.section-divider-motif:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+/* --- SECTION 7: GALLERY --- */
+#gallery {
+    background: var(--amour);
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 52px;
+    color: var(--navy);
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.gallery-main {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800') no-repeat center;
+    background-size: cover;
+    display: block;
+    cursor: pointer;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.gallery-item {
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.gallery-grid div:nth-child(1) {
+    background: url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800') no-repeat center;
+    background-size: cover;
+}
+
+.gallery-grid div:nth-child(2) {
+    background: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800') no-repeat center;
+    background-size: cover;
+}
+
+.gallery-grid div:nth-child(3) {
+    background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800') no-repeat center;
+    background-size: cover;
+}
+
+.gallery-grid div:nth-child(4) {
+    background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=800') no-repeat center;
+    background-size: cover;
+}
+
+/* --- SECTION 8: WEDDING GIFT --- */
+#wedding-gift {
+    background: var(--navy);
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.corner-gift-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.corner-gift-top-right {
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.gift-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 52px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.gift-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+
+.btn-gift {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+/* --- SECTION 10: WEDDING WISH CAROUSEL --- */
+#wedding-wish {
+    background: var(--amour);
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.wish-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 52px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.wish-form {
+    max-width: 400px;
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.wish-form input,
+.wish-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid rgba(46, 53, 81, 0.2);
+    border-radius: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    background: var(--white);
+    color: var(--navy);
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.wish-form input:focus,
+.wish-form textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+    box-shadow: 0 0 10px rgba(46, 53, 81, 0.1);
+}
+
+.wish-form input::placeholder,
+.wish-form textarea::placeholder {
+    color: #aaaaaa;
+    font-style: italic;
+}
+
+.btn-send-wish {
+    width: 100%;
+    background: var(--navy);
+    color: var(--gold);
+    border: none;
+    border-radius: 30px;
+    padding: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-send-wish:hover {
+    background: var(--deep-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(46, 53, 81, 0.2);
+}
+
+.wish-carousel-section {
+    margin-top: 24px;
+    width: 100%;
+}
+
+.wish-carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* KUNCI: viewport overflow hidden */
+.wish-viewport {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 16px;
+    width: 100%;
+}
+
+/* Track berisi semua kartu berjejer horizontal */
+.wish-track {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    width: 100%;
+}
+
+/* Setiap kartu = 1 lebar viewport penuh */
+.wish-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 180px;
+    padding: 28px 20px;
+    background: var(--white);
+    border: 1px solid rgba(46, 53, 81, 0.12);
+    border-radius: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 2px 12px rgba(46, 53, 81, 0.08);
+}
+
+.wish-slide-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--gold);
+    line-height: 0.8;
+    opacity: 0.8;
+}
+
+.wish-slide-message {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #444444;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.wish-slide-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--navy);
+    text-transform: uppercase;
+}
+
+/* Tombol navigasi */
+.wish-nav-btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(46, 53, 81, 0.08);
+    border: 1px solid rgba(46, 53, 81, 0.2);
+    color: var(--navy);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.wish-nav-btn:hover {
+    background: rgba(46, 53, 81, 0.15);
+}
+
+.wish-nav-btn:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+/* Dots */
+.wish-dots-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.wish-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(46, 53, 81, 0.2);
+    border: 1px solid rgba(46, 53, 81, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wish-dot.active {
+    width: 22px;
+    border-radius: 4px;
+    background: var(--navy);
+}
+
+/* --- SECTION 11: TERIMA KASIH --- */
+#closing {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.closing-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(135deg, var(--deep-navy), var(--navy));
+    z-index: 0;
+}
+
+.closing-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20,25,50,0.65);
+    z-index: 1;
+}
+
+.closing-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 32px;
+}
+
+.closing-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 52px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.closing-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 2;
+    margin-bottom: 24px;
+}
+
+.closing-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--white);
+}
+
+/* MODAL STYLING */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 5000; /* Ditingkatkan agar di atas elemen lain */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    display: flex !important;
+}
+
+.modal-box {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    width: 90%;
+    max-width: 440px; /* Sedikit lebih kecil dari container agar ada margin */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    text-align: left;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modal-title {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 36px !important;
+    color: var(--navy);
+    margin-bottom: 0 !important;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.rekening-card, .alamat-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.rekening-bank { 
+    font-family: 'Raleway', sans-serif !important; 
+    font-weight: 600; 
+    font-size: 16px; 
+    color: var(--navy); 
+    margin-bottom: 12px; 
+    letter-spacing: 1px;
+}
+.rekening-label { 
+    font-family: 'Raleway', sans-serif !important; 
+    font-size: 11px; 
+    color: #888; 
+    margin-bottom: 6px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-weight: 400;
+}
+.rekening-number { 
+    font-family: 'Courier New', Courier, monospace !important; 
+    font-size: 24px; 
+    font-weight: 700; 
+    color: var(--navy); 
+    letter-spacing: 4px; 
+    margin-bottom: 8px; 
+    line-height: 1;
+}
+
+.salin-btn {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.alamat-card { display: flex; gap: 12px; align-items: flex-start; }
+.alamat-text { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--navy); line-height: 1.6; }
+
+.konfirmasi-btn {
+    width: 100%;
+    background: var(--navy);
+    color: var(--gold);
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- UTILITIES & ANIMATIONS --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+#cover {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.music-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1500;
+    display: none; /* Hidden sampai invitation dibuka */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.music-toggle.playing {
+    animation: musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 84px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    z-index: 1400;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .music-btn {
+        left: auto;
+        right: 20px;
+    }
+    .scroll-top {
+        left: auto;
+        right: 24px;
+    }
+}
+
+/* Force all sections to contain their children */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- GOLD MOTIFS STYLING --- */
+.corner-floral {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.65;
+    transition: all 0.3s ease;
+}
+
+/* Extra large corners for Cover and Closing to make them grand entrance and exit */
+#cover .corner-floral,
+#closing .corner-floral {
+    width: 220px;
+    height: 220px;
+}
+
+@media (max-width: 480px) {
+    .corner-floral {
+        width: 110px;
+        height: 110px;
+    }
+    #cover .corner-floral,
+    #closing .corner-floral {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+.corner-floral.top-left {
+    top: 0;
+    left: 0;
+}
+
+.corner-floral.top-right {
+    top: 0;
+    right: 0;
+    transform: scaleX(-1);
+}
+
+.corner-floral.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: scaleY(-1);
+}
+
+.corner-floral.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: scale(-1);
+}
+
+/* Card Floral Ornaments (Akad & Resepsi) */
+.card-floral-top {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    max-width: 220px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.75;
+}
+
+.card-floral-bottom {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    max-width: 220px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.75;
+}
+
+/* Monogram Custom Ring Adjustments */
+.monogram-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: monogramRotate 45s linear infinite;
+}
+
+@keyframes monogramRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ensure section content stays above background motifs */
+.cover-content, 
+.hero-content, 
+.quote-text, 
+.quote-source, 
+.monogram-letter,
+#profil > div, 
+.profil-divider,
+.acara-card > p, 
+.acara-card > a, 
+.gallery-title, 
+.gallery-main, 
+.gallery-grid, 
+.gift-title, 
+.gift-desc, 
+.btn-gift, 
+.closing-content {
+    position: relative;
+    z-index: 2;
+}
+

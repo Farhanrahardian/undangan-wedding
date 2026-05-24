@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Generator — Undangan Shania & Fauzan</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      background: #2E3551;
+      color: white;
+      padding: 24px 28px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #DBAD85;
+      margin-bottom: 4px;
+    }
+    
+    .header p {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    
+    .card h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2E3551;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    
+    input[type="text"] {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.2s;
+    }
+    
+    input[type="text"]:focus {
+      border-color: #2E3551;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    
+    .btn-primary {
+      background: #2E3551;
+      color: #DBAD85;
+    }
+    
+    .btn-gold {
+      background: #DBAD85;
+      color: #2E3551;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #2E3551;
+      color: #2E3551;
+    }
+    
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+    
+    .btn:hover { opacity: 0.85; }
+    
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 13px;
+      resize: vertical;
+      min-height: 120px;
+      outline: none;
+      font-family: inherit;
+      line-height: 1.6;
+    }
+    
+    textarea:focus { border-color: #2E3551; }
+    
+    .link-item {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .link-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: #2E3551;
+      min-width: 150px;
+    }
+    
+    .link-url {
+      flex: 1;
+      font-size: 12px;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .link-actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    
+    .stats {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .stat-box {
+      background: #f0f2f5;
+      border-radius: 10px;
+      padding: 12px 16px;
+      flex: 1;
+      text-align: center;
+    }
+    
+    .stat-num {
+      font-size: 24px;
+      font-weight: 700;
+      color: #2E3551;
+    }
+    
+    .stat-label {
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+    
+    .base-url-display {
+      background: #f0f2f5;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #555;
+      font-family: monospace;
+      margin-bottom: 12px;
+      word-break: break-all;
+    }
+    
+    .hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+    
+    .copied-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2E3551;
+      color: #DBAD85;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 999;
+      pointer-events: none;
+    }
+    
+    .copied-toast.show { opacity: 1; }
+    
+    #linkList { max-height: 500px; overflow-y: auto; }
+    
+    .empty-state {
+      text-align: center;
+      padding: 32px;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="header">
+    <h1>✉ Link Generator Undangan</h1>
+    <p>Shania & Fauzan — 18 Juli 2026</p>
+  </div>
+
+  <!-- Base URL Config -->
+  <div class="card">
+    <h2>⚙️ URL Website Undangan</h2>
+    <div class="input-row">
+      <input type="text" id="baseUrl" 
+        placeholder="https://website-undangan.com"
+        value="https://website-undangan.com">
+      <button class="btn btn-outline" 
+              onclick="updateBaseUrl()">Simpan</button>
+    </div>
+    <div class="base-url-display" id="baseUrlDisplay">
+      https://website-undangan.com?to=NamaTamu
+    </div>
+  </div>
+
+  <!-- Input Manual -->
+  <div class="card">
+    <h2>➕ Tambah Tamu Manual</h2>
+    <div class="input-row">
+      <input type="text" id="inputNama" 
+        placeholder="Contoh: Budi Santoso"
+        onkeypress="if(event.key==='Enter') addGuest()">
+      <button class="btn btn-primary" 
+              onclick="addGuest()">Tambah</button>
+    </div>
+    <p class="hint">
+      Tekan Enter atau klik Tambah. 
+      Nama akan otomatis di-encode untuk URL.
+    </p>
+  </div>
+
+  <!-- Import Massal -->
+  <div class="card">
+    <h2>📋 Import Nama Massal</h2>
+    <textarea id="bulkInput" 
+      placeholder="Paste nama dari Excel (1 kolom) atau 
+ketik 1 nama per baris:
+
+Budi Santoso
+Siti Rahayu  
+Ahmad & Istri
+Keluarga Besar Hasan
+
+Tips: Di Excel, pilih semua sel nama → 
+Ctrl+C → Paste langsung di sini"></textarea>
+    <div style="margin-top: 10px; display:flex; gap:8px;">
+      <button class="btn btn-primary" 
+              onclick="importBulk()">
+        Import Semua
+      </button>
+      <button class="btn btn-outline" 
+              onclick="clearBulk()">
+        Bersihkan
+      </button>
+    </div>
+    <p class="hint">
+      Bisa paste langsung dari Excel/Google Sheets 
+      (1 kolom nama). Mendukung hingga 10.000+ tamu.
+    </p>
+  </div>
+
+  <!-- Hasil Link -->
+  <div class="card">
+    <h2>🔗 Daftar Link Undangan</h2>
+    
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-num" id="totalGuest">0</div>
+        <div class="stat-label">Total Tamu</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="totalLink">0</div>
+        <div class="stat-label">Link Generated</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
+      <button class="btn btn-gold" 
+              onclick="copyAllLinks()">
+        📋 Copy Semua Link
+      </button>
+      <button class="btn btn-outline" 
+              onclick="exportCSV()">
+        📥 Export CSV
+      </button>
+      <button class="btn btn-outline" 
+              onclick="copyWAFormat()">
+        💬 Format WA
+      </button>
+      <button class="btn btn-sm btn-outline" 
+              onclick="clearAll()"
+              style="margin-left:auto; border-color:#dc3545; color:#dc3545;">
+        🗑 Hapus Semua
+      </button>
+    </div>
+
+    <div id="linkList">
+      <div class="empty-state">
+        Belum ada tamu. Tambahkan nama di atas.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="copied-toast" id="toast">✓ Tersalin!</div>
+
+<script>
+  let guests = [];
+  let baseUrl = 'https://website-undangan.com';
+
+  function updateBaseUrl() {
+    const input = document.getElementById('baseUrl');
+    baseUrl = input.value.trim().replace(/\/$/, '');
+    document.getElementById('baseUrlDisplay').textContent = 
+      baseUrl + '?to=NamaTamu';
+    renderLinks();
+    showToast('URL disimpan!');
+  }
+
+  function generateLink(name) {
+    return baseUrl + '?to=' + encodeURIComponent(name);
+  }
+
+  function addGuest() {
+    const input = document.getElementById('inputNama');
+    const name = input.value.trim();
+    if (!name) return;
+    
+    // Cek duplikat
+    if (guests.includes(name)) {
+      showToast('Nama sudah ada!');
+      return;
+    }
+    
+    guests.push(name);
+    input.value = '';
+    input.focus();
+    renderLinks();
+  }
+
+  function importBulk() {
+    const text = document.getElementById('bulkInput').value;
+    
+    if (!text.trim()) {
+      showToast('Textarea masih kosong!');
+      return;
+    }
+    
+    // Handle semua jenis line ending:
+    // \r\n (Windows), \r (Mac), \n (Unix)
+    const names = text
+      .replace(/\r\n/g, '\n')  // Windows CRLF → LF
+      .replace(/\r/g, '\n')    // Mac CR → LF
+      .split('\n')              // Split per baris
+      .map(n => n
+        .replace(/\t/g, ' ')   // Tab → spasi (dari Excel kolom)
+        .trim()                 // Hapus spasi depan-belakang
+      )
+      .filter(n => n.length > 0); // Hapus baris kosong
+    
+    console.log('Names found:', names); // debug
+    
+    if (names.length === 0) {
+      showToast('Tidak ada nama yang valid!');
+      return;
+    }
+    
+    let added = 0;
+    let skipped = 0;
+    
+    names.forEach(name => {
+      if (!guests.includes(name)) {
+        guests.push(name);
+        added++;
+      } else {
+        skipped++;
+      }
+    });
+    
+    renderLinks();
+    
+    if (skipped > 0) {
+      showToast(`${added} ditambahkan, ${skipped} duplikat dilewati`);
+    } else {
+      showToast(`${added} nama berhasil diimport!`);
+    }
+  }
+
+  function clearBulk() {
+    document.getElementById('bulkInput').value = '';
+  }
+
+  function removeGuest(index) {
+    guests.splice(index, 1);
+    renderLinks();
+  }
+
+  function renderLinks() {
+    const container = document.getElementById('linkList');
+    document.getElementById('totalGuest').textContent = 
+      guests.length;
+    document.getElementById('totalLink').textContent = 
+      guests.length;
+
+    if (guests.length === 0) {
+      container.innerHTML = 
+        '<div class="empty-state">Belum ada tamu.</div>';
+      return;
+    }
+
+    container.innerHTML = guests.map((name, i) => `
+      <div class="link-item">
+        <div class="link-name">${name}</div>
+        <div class="link-url">${generateLink(name)}</div>
+        <div class="link-actions">
+          <button class="btn btn-sm btn-gold" 
+            onclick="copyLink('${generateLink(name).replace(/'/g,"\\'")}')">
+            Copy
+          </button>
+          <button class="btn btn-sm btn-outline"
+            onclick="openWA(${i})"
+            title="Buka WhatsApp">
+            WA
+          </button>
+          <button class="btn btn-sm" 
+            style="background:#fee2e2; color:#dc3545;"
+            onclick="removeGuest(${i})">✕</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function copyLink(url) {
+    navigator.clipboard.writeText(url)
+      .then(() => showToast('Link tersalin!'));
+  }
+
+  function openWA(index) {
+    const name = guests[index];
+    const link = generateLink(name);
+    const msg = encodeURIComponent(
+      `Assalamu'alaikum ${name},\n\n` +
+      `Kami mengundang Bapak/Ibu/Saudara/i untuk ` +
+      `hadir di pernikahan kami.\n\n` +
+      `Shania & Fauzan\n` +
+      `Sabtu, 18 Juli 2026\n\n` +
+      `Buka undangan digital kami:\n${link}`
+    );
+    window.open(`https://wa.me/?text=${msg}`, '_blank');
+  }
+
+  function copyAllLinks() {
+    if (guests.length === 0) {
+      showToast('Belum ada tamu!');
+      return;
+    }
+    const text = guests.map(name => 
+      `${name}: ${generateLink(name)}`
+    ).join('\n');
+    navigator.clipboard.writeText(text)
+      .then(() => showToast(`${guests.length} link tersalin!`));
+  }
+
+  function copyWAFormat() {
+    if (guests.length === 0) {
+      showToast('Belum ada tamu!');
+      return;
+    }
+    const text = guests.map(name => {
+      const link = generateLink(name);
+      return (
+        `*${name}*\n` +
+        `Yth. ${name},\n\n` +
+        `Kami mengundang kehadiran Anda di pernikahan kami:\n` +
+        `*Shania & Fauzan*\n` +
+        `📅 Sabtu, 18 Juli 2026\n\n` +
+        `Undangan digital: ${link}`
+      );
+    }).join('\n\n---\n\n');
+    navigator.clipboard.writeText(text)
+      .then(() => showToast('Format WA tersalin!'));
+  }
+
+  function exportCSV() {
+    if (guests.length === 0) {
+      showToast('Belum ada tamu!');
+      return;
+    }
+    const csv = 'Nama Tamu,Link Undangan\n' + 
+      guests.map(name => 
+        `"${name}","${generateLink(name)}"`
+      ).join('\n');
+    
+    const blob = new Blob([csv], {type:'text/csv'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'undangan-shania-fauzan.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('CSV berhasil didownload!');
+  }
+
+  function clearAll() {
+    if (!confirm('Hapus semua tamu?')) return;
+    guests = [];
+    renderLinks();
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = '✓ ' + msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+</script>
+
+</body>
+</html>
