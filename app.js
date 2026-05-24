@@ -88,7 +88,7 @@ function initFeaturesAfterOpen(mainContent) {
     setTimeout(() => {
         const music = document.getElementById('bgMusic');
         if (music) {
-            fadeInMusic(music, 0.5, 2000);
+            fadeInMusic(music, 1.0, 2000);
         }
         const musicToggle = document.getElementById('musicToggle');
         if (musicToggle) musicToggle.style.display = 'flex';
