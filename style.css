@@ -955,6 +955,21 @@ body.no-scroll {
     color: var(--white);
 }
 
+.closing-motif {
+    display: block;
+    margin: 24px auto 0;
+    max-width: 220px;
+    width: 55%;
+    height: auto;
+    opacity: 0.95;
+    transition: all 0.4s ease;
+}
+
+.closing-motif:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
 /* MODAL STYLING */
 .modal-overlay {
     position: fixed;
